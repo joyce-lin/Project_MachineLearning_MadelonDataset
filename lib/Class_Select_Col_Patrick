@@ -1,0 +1,39 @@
+def gen_select_list(drop_set, table_index):
+    select_set = {i for i in range(625 * table_index,
+                                   625 * (table_index + 1))} - drop_set
+    return ['feat_' + str(col).zfill(4) for col in sorted(list(select_set))]
+
+
+
+def gen_cols_dict(table_list, drop_cols):
+    if drop_cols == None:
+        cols_dict = {table_name : None for table_name in table_list}
+    else:
+        drop_set = {int(col.replace('feat_','')) for col in drop_cols}
+        cols_dict = { 
+            table_name : gen_select_list(drop_set, table_index)
+            for table_index, table_name in enumerate(table_list)
+        }   
+    return cols_dict
+
+
+
+def gen_query(table, yoda_list, cols_list=None):
+    if cols_list == None:
+        select = '*' 
+    else:
+        select = ','.join(cols_list + ['yoda'])
+                                                                                      
+    return """ 
+        SELECT {0}
+        FROM {1}
+        WHERE {1}.yoda IN ({2});
+    """.format(select, table, ','.join(yoda_list))
+
+
+
+def gen_feat_queries(yoda_list, drop_cols=None):
+    table_list = ['madelon_data_{}'.format(i) for i in range(1, 9)]
+    cols_dict = gen_cols_dict(table_list, drop_cols)
+    return [gen_query(table, yoda_list, cols_dict[table])
+            for table in table_list]
