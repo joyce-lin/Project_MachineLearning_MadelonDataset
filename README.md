@@ -10,7 +10,7 @@ This dataset contains 5000 features and 220,000 rows (1.1 billion data points) w
 
 This porject is to apply machine learning techniques to identify important features and then use these techniques to do prediction on the entire set. 
 
-#### Data Manipulation
+### Data Manipulation
 
 Due to the size of the dataset, I had to built model on randomly selected subsets of the data. 
 - Subset 1: .1% of the data
