@@ -20,12 +20,19 @@ Due to the size of the dataset, I had to built model on randomly selected subset
 
 
 ### Tasks
-1. Data EDA:      Use ANOVA for feature selection to select top 1000 features
-2. Benchmark Modeling:     Create K-Neighbors and Logistic Regression benchmark models 
-3. Feature Importance:     Create  feature selection (Select K Best/ PCA) pipelines
-                           - Use feature selection / dimension reduction to reduce the dataset to a manageable size then use conventional methods
-4. Implement Final Model:      Present best model and apply to larger data subset
 
+#### Featuer Engineering
+    Use ANOVA for feature selection to select top 1000 features
+
+#### Benchmark Modeling  
+    Create K-Neighbors and Logistic Regression benchmark models 
+
+#### Feature Importance:     
+    Create  feature selection (Select K Best/ PCA) pipelines
+    Use feature selection / dimension reduction to reduce the dataset to a manageable size then use conventional methods
+#### Implement Final Model:      
+    Present best model and apply to larger data subset
+  
 
 
 
