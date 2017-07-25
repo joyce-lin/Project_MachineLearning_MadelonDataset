@@ -30,7 +30,7 @@ Due to the size of the dataset, I had to built model on randomly selected subset
 
 
 
-
+####################################################
 ##### Jupyter Notebook, Step 1 - Benchmarking
 - build pipeline to perform a naive logistic regression as a baseline model
 - optionally, run one or more additional naive models e.g. decision tree, k nearest neighors, etc
